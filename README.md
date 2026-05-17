@@ -1,3 +1,12 @@
+> **Install this fork:** `pip install git+https://github.com/cagataycali/vjepa2.git` (includes MPS, ST-A², decord2, bugfixes)
+
+## 🚀 Install (with community patches: MPS, ST-A², bugfixes)
+
+```bash
+pip install git+https://github.com/cagataycali/vjepa2.git
+```
+
+
 
 🆕 **[2026-03-16]:** :fire: V-JEPA 2.1 is released :fire: A new familly of models trained with a novel recipe that learns high quality and temporolly consistent dense features !!!
 
