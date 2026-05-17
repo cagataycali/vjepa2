@@ -1,4 +1,3 @@
-> **Install this fork:** `pip install git+https://github.com/cagataycali/vjepa2.git` (includes MPS, ST-A², decord2, bugfixes)
 
 ## 🚀 Install (with community patches: MPS, ST-A², bugfixes)
 
