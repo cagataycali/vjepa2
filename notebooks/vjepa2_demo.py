@@ -63,7 +63,7 @@ def get_video():
     return video
 
 
-def forward_vjepa_video(model_hf, model_pt, hf_transform, pt_transform, device):
+def forward_vjepa_video(model_hf, model_pt, hf_transform, pt_transform, device="cuda"):
     # Run a sample inference with VJEPA
     with torch.inference_mode():
         # Read and pre-process the image
@@ -96,7 +96,15 @@ def get_vjepa_video_classification_results(classifier, out_patch_features_pt):
     return
 
 
-def run_sample_inference(device):
+def run_sample_inference():
+    if torch.cuda.is_available():
+        device = "cuda"
+    elif torch.backends.mps.is_available():
+        device = "mps"
+    else:
+        device = "cpu"
+    print(f"Using device: {device}")
+    
     # HuggingFace model repo name
     hf_model_name = (
         "facebook/vjepa2-vitg-fpc64-384"  # Replace with your favored model, e.g. facebook/vjepa2-vitg-fpc64-384
@@ -167,12 +175,5 @@ def run_sample_inference(device):
 
 
 if __name__ == "__main__":
-    # Configuring GPU acceleration for CUDA or MPS(Apple Silicon)
-    if torch.cuda.is_available():
-        device = torch.device("cuda")
-    elif torch.backends.mps.is_available():
-        device = torch.device("mps")
-    else:
-        device = torch.device("cpu")
     # Run with: `python -m notebooks.vjepa2_demo`
-    run_sample_inference(device)
+    run_sample_inference()
