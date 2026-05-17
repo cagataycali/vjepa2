@@ -13,8 +13,8 @@ import torch
 import torch.nn.functional as F
 import yaml
 from app.vjepa_2_1.wrappers import MultiSeqWrapper, PredictorMultiSeqWrapper
-from src.utils.checkpoint_loader import robust_checkpoint_loader
-from src.utils.schedulers import (
+from vjepa2.utils.checkpoint_loader import robust_checkpoint_loader
+from vjepa2.utils.schedulers import (
     CosineWDSchedule,
     LinearDecaySchedule,
     WarmupCosineSchedule,
@@ -333,7 +333,7 @@ def init_opt(
     ]
 
     if use_radamw:
-        from src.utils.adamw import AdamW as RAdamW
+        from vjepa2.utils.adamw import AdamW as RAdamW
 
         logger.info("Using Rescaled-AdamW")
         optimizer = RAdamW(param_groups, betas=betas, eps=eps)

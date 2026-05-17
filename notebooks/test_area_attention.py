@@ -34,7 +34,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 import torch
 import torch.nn as nn
 
-from src.models.utils.modules import RoPEAttention, RoPEAreaAttention, Block
+from vjepa2.models.utils.modules import RoPEAttention, RoPEAreaAttention, Block
 
 
 def test_shape_and_forward():
@@ -261,7 +261,7 @@ def test_full_vit_forward():
     print("=" * 60)
 
     from functools import partial
-    from src.models.vision_transformer import VisionTransformer
+    from vjepa2.models.vision_transformer import VisionTransformer
 
     # Small ViT for CPU testing
     model = VisionTransformer(

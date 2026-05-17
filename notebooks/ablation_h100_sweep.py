@@ -37,9 +37,9 @@ repo_root = os.path.dirname(script_dir)
 sys.path.insert(0, repo_root)
 
 from app.vjepa.utils import init_video_model
-from src.masks.multiseq_multiblock3d import _MaskGenerator
-from src.masks.utils import apply_masks
-from src.models.utils.modules import Block, RoPEAttention, RoPEAreaAttention
+from vjepa2.masks.multiseq_multiblock3d import _MaskGenerator
+from vjepa2.masks.utils import apply_masks
+from vjepa2.models.utils.modules import Block, RoPEAttention, RoPEAreaAttention
 
 
 # ──────────────────────────────────────────────────────────────────

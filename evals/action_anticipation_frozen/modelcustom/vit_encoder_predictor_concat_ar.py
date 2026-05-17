@@ -38,8 +38,8 @@ def _get_model_modules(pretrain_kwargs):
         import app.vjepa_2_1.models.predictor as vit_pred
         import app.vjepa_2_1.models.vision_transformer as vit
     else:
-        import src.models.predictor as vit_pred
-        import src.models.vision_transformer as vit
+        import vjepa2.models.predictor as vit_pred
+        import vjepa2.models.vision_transformer as vit
     return vit, vit_pred
 
 

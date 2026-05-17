@@ -1,6 +1,78 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cc-vjepa2"
+version = "0.0.3"
+description = "V-JEPA 2 — Self-Supervised Video Models (community fork with MPS, ST-A², bugfixes)"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+    {name = "Meta AI (original)"},
+    {name = "Cagatay Cali (community maintainer)", email = "cagataycali@icloud.com"},
+]
+keywords = ["vjepa", "vjepa2", "video", "self-supervised", "world-model", "robotics"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "torch>=2.0",
+    "torchvision",
+    "numpy",
+    "pyyaml",
+    "timm",
+    "einops",
+]
+
+[project.optional-dependencies]
+full = [
+    "tensorboard",
+    "wandb",
+    "iopath",
+    "opencv-python",
+    "submitit",
+    "braceexpand",
+    "webdataset",
+    "transformers",
+    "peft",
+    "decord2",
+    "pandas",
+    "beartype",
+    "psutil",
+    "h5py",
+    "fire",
+    "python-box",
+    "scikit-image",
+    "ftfy",
+]
+dev = [
+    "pytest>=7.0",
+    "ruff",
+]
+
+[project.urls]
+Homepage = "https://github.com/cagataycali/vjepa2"
+Repository = "https://github.com/cagataycali/vjepa2"
+Issues = "https://github.com/cagataycali/vjepa2/issues"
+
+[tool.setuptools.packages.find]
+include = ["vjepa2*"]
+exclude = ["tests*", "notebooks*", "scripts*", "configs*"]
+
 [tool.isort]
-profile="black"
-line_length=119
+profile = "black"
+line_length = 119
 
 [tool.black]
 line-length = 119

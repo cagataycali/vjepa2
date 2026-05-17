@@ -30,11 +30,11 @@ from app.vjepa_2_1.utils import (
     load_checkpoint,
     normalize_nested,
 )
-from src.datasets.data_manager import init_data
-from src.masks.multiseq_multiblock3d import MaskCollator
-from src.masks.utils import apply_masks
-from src.utils.distributed import init_distributed
-from src.utils.logging import AverageMeter, CSVLogger, get_logger, gpu_timer
+from vjepa2.datasets.data_manager import init_data
+from vjepa2.masks.multiseq_multiblock3d import MaskCollator
+from vjepa2.masks.utils import apply_masks
+from vjepa2.utils.distributed import init_distributed
+from vjepa2.utils.logging import AverageMeter, CSVLogger, get_logger, gpu_timer
 from torch.nn.parallel import DistributedDataParallel
 
 
